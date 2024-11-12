@@ -1,0 +1,9 @@
+<h1 class="mt-4">Admin</h1>
+<p class="lead mb-3">Welcome <%= user.name %></p>
+<!--<p class="lead mb-3"><%= Object.entries(session) %></p>-->
+<% Object.entries(session).forEach((sesh) => { %>
+<!--what is the diff between %= %- %-->
+<p class="lead mb-3">SessionID: <%- sesh[0] %> </p>
+<p class="lead mb-3">UserID: <%- JSON.parse(sesh[1]).passport.user %> </p>
+<% }); %>
+<a href="/auth/logout" class="btn btn-secondary">Logout</a>
